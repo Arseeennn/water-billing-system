@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Billing Statement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d8effa;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+        .container {
+            background: #9dcbf7;
+            border: 2px solid #e9ecf0;
+            border-radius: 8px;
+            padding: 25px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #033261;
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: block;
+            margin-top: 15px;
+            color: #1a1a1a;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #aebac6;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #fcfcfc;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #030475;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #1872da;
+        }
+        .btn-clear {
+            background-color: #63db53; 
+            margin-top: 10px;
+        }
+        .btn-clear:hover {
+            background-color: #015705;
+        }
+        .counter {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .receipt {
+            font-family: monospace;
+            white-space: pre-wrap;
+            margin-top: 15px;
+            font-size: 0.95rem;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        <h2>Water Billing Statement</h2>
+        
+        <div id="formArea">
+            <label>Customer Name</label>
+            <input type="text" id="custName" class="form-input" placeholder="input name">
+            
+            <label>Water Consumption (Cubic Meter)</label>
+            <input type="number" id="waterCons" class="form-input" min="1">
+            
+            <label>Customer Type</label>
+            <select id="custType" class="form-input">
+                <option value="Regular">Regular</option>
+                <option value="Senior Citizen">Senior Citizen</option>
+                <option value="Solo Parent">Solo Parent</option>
+            </select>
+            
+            <button id="btnGenerate">Generate Bill</button>
+            <button id="btnClear" class="btn-clear">Clear Form</button>
+        </div>
+        
+        <div class="counter">
+            Transactions Processed : <span id="txCount">0</span>
+        </div>
+        
+        <div id="receiptArea" class="receipt"></div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
